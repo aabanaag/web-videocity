@@ -1,1 +1,61 @@
 @import 'modularized-normalize-scss/_normalize.scss';
+
+.main-layout {
+  padding: 0 !important;
+  .main-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  nav {
+    border-radius: 0 !important;
+    .navbar-brand {
+      font-size: 20px;
+    }
+  }
+
+  .tile-component {
+    margin-bottom: 10px;
+    
+    a {
+      color: #000;
+    }
+    a:hover {
+      color: #777;
+      text-decoration: none;
+    }
+
+    .label {
+      font-size: 15px;
+      margin-right: 5px;
+    }
+
+    h5 {
+      font-size: 16px;
+      margin-top: 2px;
+    }
+  }
+
+  .movies-info {
+    .label {
+      font-size: 15px;
+      margin-right: 5px;
+    }
+
+    img {
+      margin-bottom: 20px;
+    }
+
+    .details {
+      h3 {
+        margin-top: 30px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .user-info-component {
+      overflow: hidden;
+      padding: 10px 0;
+    }
+  }
+}
