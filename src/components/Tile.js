@@ -6,19 +6,28 @@ import {
   Col
 } from 'react-bootstrap';
 
-const Tile = () => (
+const Tile = ({title, year, status, img, id}) => {
+
+  const renderStatus = () => {
+    return (
+      <Label bsStyle="danger">{status}</Label>
+    )
+  }
+  
+  return (
   <Col xs={6} sm={4} md={4} lg={2} className="tile-component">
-    <Link to="/the-lego-batman-movie">
+    <Link to={ `/${id}` }>
       <Image
-        src="http://www.impawards.com/2017/posters/lego_batman_movie_ver2.jpg" thumbnail responsive>
+        src={img} thumbnail responsive>
       </Image>
-      <h5>The LEGO Batman Movie</h5>
+      <h5>{title}</h5>
       <span className="hidden-xs">
-        <Label>2017</Label>
-        <Label bsStyle="danger">Not Available</Label>
+        <Label>{year}</Label>
+        { renderStatus() }
       </span>
     </Link>
   </Col>
-)
+  )
+}
 
 export default Tile;

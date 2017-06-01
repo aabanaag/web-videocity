@@ -12,7 +12,7 @@ export const renderRoutes = () => (
   <Router history={browserHistory}>
     <Route path='/' component={MainLayout}>
       <IndexRoute component={MoviesPage}></IndexRoute>
-      <Route path='/the-lego-batman-movie' component={MoviePage}></Route>
+      <Route path='/:id' component={MoviePage}></Route>
     </Route>
   </Router>
 )
