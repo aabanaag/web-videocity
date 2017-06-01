@@ -365,9 +365,14 @@ textarea {
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
+body {
+  background-image: url("./bg.png");
+  color: #fff; }
+
 .main-layout {
   padding: 0 !important; }
   .main-layout .main-content {
+    padding-top: 20px;
     padding-left: 15px;
     padding-right: 15px; }
   .main-layout nav {
@@ -377,21 +382,25 @@ textarea {
   .main-layout .tile-component {
     margin-bottom: 10px; }
     .main-layout .tile-component a {
-      color: #000; }
+      color: #fff; }
     .main-layout .tile-component a:hover {
       color: #777;
       text-decoration: none; }
     .main-layout .tile-component .label {
       font-size: 15px;
-      margin-right: 5px; }
+      margin-right: 5px;
+      color: #fff; }
     .main-layout .tile-component h5 {
       font-size: 16px;
-      margin-top: 2px; }
-  .main-layout .movies-info .label {
-    font-size: 15px;
-    margin-right: 5px; }
-  .main-layout .movies-info img {
-    margin-bottom: 20px; }
-  .main-layout .movies-info .details h3 {
-    margin-top: 30px;
-    margin-bottom: 20px; }
+      margin-top: 2px;
+      margin-bottom: 20px; }
+  .main-layout .movies-info {
+    color: #fff; }
+    .main-layout .movies-info .label {
+      font-size: 15px;
+      margin-right: 5px; }
+    .main-layout .movies-info img {
+      margin-bottom: 20px; }
+    .main-layout .movies-info .details h3 {
+      margin-top: 30px;
+      margin-bottom: 20px; }

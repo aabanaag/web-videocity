@@ -1,8 +1,14 @@
 @import 'modularized-normalize-scss/_normalize.scss';
 
+body {
+  background-image: url('./bg.png');
+  color: #fff;
+}
+
 .main-layout {
   padding: 0 !important;
   .main-content {
+    padding-top: 20px;
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -18,7 +24,7 @@
     margin-bottom: 10px;
     
     a {
-      color: #000;
+      color: #fff;
     }
     a:hover {
       color: #777;
@@ -28,15 +34,19 @@
     .label {
       font-size: 15px;
       margin-right: 5px;
+      color: #fff;
     }
 
     h5 {
       font-size: 16px;
       margin-top: 2px;
+      margin-bottom: 20px;
     }
   }
 
   .movies-info {
+    color: #fff;
+    
     .label {
       font-size: 15px;
       margin-right: 5px;
