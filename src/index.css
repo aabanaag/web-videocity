@@ -369,6 +369,9 @@ body {
   background-image: url("./bg.png");
   color: #fff; }
 
+.label {
+  border-radius: 0 !important; }
+
 .main-layout {
   padding: 0 !important; }
   .main-layout .main-content {
@@ -379,6 +382,8 @@ body {
     border-radius: 0 !important; }
     .main-layout nav .navbar-brand {
       font-size: 20px; }
+  .main-layout .search input, .main-layout .search button {
+    border-radius: 0 !important; }
   .main-layout .tile-component {
     margin-bottom: 10px; }
     .main-layout .tile-component a {
@@ -394,6 +399,9 @@ body {
       font-size: 16px;
       margin-top: 2px;
       margin-bottom: 20px; }
+    .main-layout .tile-component img {
+      width: 100%;
+      border-radius: 0 !important; }
   .main-layout .movies-info {
     color: #fff; }
     .main-layout .movies-info .label {

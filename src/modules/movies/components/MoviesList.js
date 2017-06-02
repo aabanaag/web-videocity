@@ -9,7 +9,7 @@ const MoviesList = ({movies}) => {
         title={movie.title}
         year={movie.year}
         status={movie.status}
-        img={movie.img}
+        img={movie.poster}
         id={movie._id} />
     ));
   }

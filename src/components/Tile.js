@@ -10,7 +10,7 @@ const Tile = ({title, year, status, img, id}) => {
 
   const renderStatus = () => {
     return (
-      <Label bsStyle="danger">{status}</Label>
+      <Label bsStyle="danger" className="text-uppercase">{status}</Label>
     )
   }
   

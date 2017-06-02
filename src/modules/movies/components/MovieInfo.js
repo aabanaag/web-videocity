@@ -23,24 +23,25 @@ const MovieInfo = ({ movie }) => {
     ));
   }
 
+  const renderGenre = () => {
+    const { genre } = movie;
+
+    return genre.map((obj, i) => (
+      <Label key={i}>{obj}</Label>
+    ));
+  }
+
   return (
     <div className="movies-info">
       <Row>
         <Col xs={12} sm={12} md={2} lg={2}>
           <Image
-            src={movie.img} thumbnail responsive />
+            src={movie.poster} thumbnail responsive />
           { renderStatus() }
         </Col>
         <Col xs={12} sm={12} md={10} lg={10}>
           <PageHeader>{movie.title} <small><Label>{movie.year}</Label></small></PageHeader>
-          <h3>
-            <Label>Action</Label>
-            <Label>Adventure</Label>
-            <Label>Animation</Label>
-            <Label>Comedy</Label>
-            <Label>Family</Label>
-            <Label>Fantasy</Label>
-          </h3>
+          <h3>{ renderGenre() }</h3>
           <Col xs={12} sm={12} md={6} lg={6}>
             <h2>Director</h2>
             <div>
@@ -49,16 +50,14 @@ const MovieInfo = ({ movie }) => {
           </Col>
           <Col xs={12} sm={12} md={6} lg={6}>
             <h2>Cast</h2>
-            <div>
-              { renderCast() }
-            </div>
+            <div>{ renderCast() }</div>
           </Col>
         </Col>
       </Row>
       <Row>
         <Col xs={12} className="details">
           <h3>Synopsis</h3>
-          <p>{movie.synopsis}</p>
+          <p>{movie.plot}</p>
         </Col>
       </Row>
     </div>

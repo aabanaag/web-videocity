@@ -5,6 +5,10 @@ body {
   color: #fff;
 }
 
+.label {
+  border-radius: 0 !important;
+}
+
 .main-layout {
   padding: 0 !important;
   .main-content {
@@ -17,6 +21,12 @@ body {
     border-radius: 0 !important;
     .navbar-brand {
       font-size: 20px;
+    }
+  }
+
+  .search {
+    input, button {
+      border-radius: 0 !important;
     }
   }
 
@@ -41,6 +51,11 @@ body {
       font-size: 16px;
       margin-top: 2px;
       margin-bottom: 20px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 0 !important;
     }
   }
 
