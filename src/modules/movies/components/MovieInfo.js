@@ -18,20 +18,20 @@ const MovieInfo = ({ movie }) => {
   const renderCast = () => {
     const { cast } = movie;
 
-    return cast.map((name, i) => (
-      <UserInfo key={i} name={name} />
+    return cast.map((obj, i) => (
+      <UserInfo key={i} name={obj.name} sub={obj.role} />
     ));
   }
 
   return (
     <div className="movies-info">
       <Row>
-        <Col xs={12} sm={12} md={3} lg={3}>
+        <Col xs={12} sm={12} md={2} lg={2}>
           <Image
             src={movie.img} thumbnail responsive />
           { renderStatus() }
         </Col>
-        <Col xs={12} sm={12} md={9} lg={9}>
+        <Col xs={12} sm={12} md={10} lg={10}>
           <PageHeader>{movie.title} <small><Label>{movie.year}</Label></small></PageHeader>
           <h3>
             <Label>Action</Label>
