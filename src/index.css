@@ -412,3 +412,18 @@ body {
     .main-layout .movies-info .details h3 {
       margin-top: 30px;
       margin-bottom: 20px; }
+  .main-layout .login-page {
+    position: relative;
+    top: 50%;
+    transform: translateY(150%); }
+    .main-layout .login-page input {
+      background-color: #444;
+      border: none !important;
+      color: #fff;
+      border-radius: 0 !important; }
+      .main-layout .login-page input:focus {
+        outline: none !important;
+        border-color: #fff;
+        box-shadow: 0 0 10px #fff; }
+    .main-layout .login-page .alert, .main-layout .login-page button {
+      border-radius: 0 !important; }

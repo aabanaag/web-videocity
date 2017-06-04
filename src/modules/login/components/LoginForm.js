@@ -59,7 +59,7 @@ class LoginForm extends PureComponent {
             onChange={i => this.setState({ password: i.target.value })} />
         </FormGroup>
         { this.renderErrorMessage() }
-        <Button bsSize="lg" bsStyle="success" type="submit">
+        <Button bsSize="lg" bsStyle="success" type="submit" block>
           Login
         </Button>
       </Form>

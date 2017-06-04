@@ -78,4 +78,27 @@ body {
       }
     }
   }
+
+  .login-page {
+    position: relative;
+    top: 50%;
+    transform: translateY(150%);
+
+    input {
+      background-color: #444;
+      border: none !important;
+      color: #fff;
+      border-radius: 0 !important;
+
+      &:focus {
+        outline: none !important;
+        border-color: #fff;
+        box-shadow: 0 0 10px #fff;
+      }
+    }
+
+    .alert, button {
+      border-radius: 0 !important;
+    }
+  }
 }

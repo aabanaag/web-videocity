@@ -21,7 +21,7 @@ class LoginPage extends Component {
   render() {
     return (
       <Row className="login-page">
-        <Col xs={12} sm={12} md={4} lg={4} mdOffset={2} lgOffset={2}>
+        <Col xs={12} sm={12} md={6} lg={4} mdOffset={3} lgOffset={4}>
           <LoginForm
             login={this.props.login}
             errorMessage={this.props.errorMessage}
