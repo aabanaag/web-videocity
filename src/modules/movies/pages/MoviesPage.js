@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { func, array } from 'prop-types';
 import {
   Row,
   Col
@@ -15,9 +16,9 @@ import {
 
 class MoviesPage extends Component {
   static propTypes = {
-    getMovies: PropTypes.func,
-    findMovie: PropTypes.func,
-    movies: PropTypes.array
+    getMovies: func,
+    findMovie: func,
+    movies: array
   }
 
   componentWillMount() {

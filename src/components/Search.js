@@ -1,4 +1,5 @@
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
+import { func } from 'prop-types';
 import {
   Form,
   FormGroup,
@@ -17,7 +18,7 @@ class Search extends PureComponent {
   }
 
   static propTypes = {
-    search: PropTypes.func
+    search: func
   }
 
   handleClick = (e) => {
