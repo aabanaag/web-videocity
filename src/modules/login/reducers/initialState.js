@@ -1,6 +1,7 @@
 const initialState = {
   isLoggedIn: false,
-  errorMessage: ''
+  errorMessage: '',
+  token: ''
 };
 
 export default initialState;

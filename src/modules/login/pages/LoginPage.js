@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { func, string, bool } from 'prop-types';
 import {
   Row,
   Col
@@ -12,9 +13,9 @@ import LoginForm from '../components/LoginForm';
 
 class LoginPage extends Component {
   static propTypes = {
-    errorMessage: PropTypes.string,
-    isLoggedIn: PropTypes.boolean,
-    login: PropTypes.func
+    errorMessage: string,
+    isLoggedIn: bool,
+    login: func
   }
 
   render() {

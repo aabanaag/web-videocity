@@ -1,4 +1,5 @@
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
+import { func, string, bool } from 'prop-types';
 import {
   Form,
   FormGroup,
@@ -10,9 +11,9 @@ import { isEmpty } from 'lodash';
 
 class LoginForm extends PureComponent {
   static propTypes = {
-    login: PropTypes.func,
-    errorMessage: PropTypes.string,
-    isLoggedIn: PropTypes.boolean
+    login: func,
+    errorMessage: string,
+    isLoggedIn: bool
   }
 
   constructor(props) {
@@ -39,7 +40,7 @@ class LoginForm extends PureComponent {
         <Alert
           bsStyle="danger">{this.props.errorMessage}</Alert>
       )
-    } else null;
+    } else return null;
   }
 
   render() {
