@@ -1,11 +1,12 @@
 import { types } from '../constants/loginActionType';
 import Client from '../../../client';
 
-export const toggleLogin = (status, msg) => ({
+export const toggleLogin = (isLoggedIn, errorMessage, token) => ({
   type: types.TOGGLE_LOGIN,
   payload: {
-    isLoggedIn: status,
-    errorMessage: msg
+    isLoggedIn,
+    errorMessage,
+    token
   }
 });
 
@@ -19,9 +20,9 @@ export const login = ({email, password}) => {
         password
       });
       
-      dispatch(toggleLogin(true, ''));
+      dispatch(toggleLogin(true, '', result));
     } catch(err) {
-      dispatch(toggleLogin(false, err.message));
+      dispatch(toggleLogin(false, err.message, ''));
     }
   }
 };

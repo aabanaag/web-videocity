@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { object } from 'prop-types';
 import {
   Row,
   Col
@@ -7,7 +8,7 @@ import {
 import MovieInfo from '../components/MovieInfo';
 class MoviePage extends Component {
   static propTypes = {
-    movie: PropTypes.object
+    movie: object
   }
 
   render() {
@@ -25,4 +26,4 @@ const mapStateToProps = (state, ownProps) => ({
   movie: state.movies.movies.find(m => m._id === ownProps.params.id)
 });
 
-export default connect(mapStateToProps, null)(MovieInfo);
+export default connect(mapStateToProps, null)(MoviePage);
