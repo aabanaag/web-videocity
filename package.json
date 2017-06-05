@@ -13,6 +13,7 @@
     "immutability-helper": "^2.2.2",
     "lodash": "^4.17.4",
     "modularized-normalize-scss": "^4.0.0",
+    "moment": "^2.18.1",
     "npm-run-all": "^4.0.2",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",

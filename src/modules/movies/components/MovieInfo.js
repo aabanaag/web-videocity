@@ -4,48 +4,58 @@ import {
   Col,
   Image,
   Label,
-  PageHeader
+  PageHeader,
+  Panel,
+  Button
 } from 'react-bootstrap';
+import { isEmpty, result } from 'lodash';
 import UserInfo from '../../../components/UserInfo';
 
-const MovieInfo = ({ movie }) => {
+const MovieInfo = ({ movie, rentMovie }) => {
   const renderStatus = () => {
     return (
-      <Label bsStyle="danger">{movie.status}</Label>
+      <Label bsStyle="info" className="text-uppercase">{result(movie, 'status', '')}</Label>
     )
   }
 
   const renderCast = () => {
-    const { cast } = movie;
+    const cast = result(movie, 'cast', '');
 
-    return cast.map((obj, i) => (
-      <UserInfo key={i} name={obj.name} sub={obj.role} />
-    ));
+    if (cast && cast.length !== 0) {
+      return cast.map((obj, i) => (
+        <UserInfo key={i} name={obj.name} sub={obj.role} />
+      ));
+    } else return null;
   }
 
   const renderGenre = () => {
-    const { genre } = movie;
+    const genre = result(movie, 'genre', '');
 
-    return genre.map((obj, i) => (
-      <Label key={i}>{obj}</Label>
-    ));
+    if (genre && genre.length !== 0) {
+      return genre.map((obj, i) => (
+        <Label key={i}>{obj}</Label>
+      )); 
+    } else return null;
   }
 
   return (
     <div className="movies-info">
       <Row>
-        <Col xs={12} sm={12} md={2} lg={2}>
+        <Col xs={12} sm={12} md={3} lg={3}>
           <Image
-            src={movie.poster} thumbnail responsive />
-          { renderStatus() }
+            src={result(movie, 'poster', '')} thumbnail responsive />
+          
+          <Button
+            bsStyle="success" block
+            onClick={i => { rentMovie(movie._id)}}>Rent</Button>
         </Col>
-        <Col xs={12} sm={12} md={10} lg={10}>
-          <PageHeader>{movie.title} <small><Label>{movie.year}</Label></small></PageHeader>
+        <Col xs={12} sm={12} md={9} lg={9}>
+          <PageHeader>{result(movie, 'title', '')} <small><Label bsStyle="warning">{result(movie, 'year', '')}</Label>{ renderStatus() }</small></PageHeader>
           <h3>{ renderGenre() }</h3>
           <Col xs={12} sm={12} md={6} lg={6}>
             <h2>Director</h2>
             <div>
-              <UserInfo name={movie.director} />
+              <UserInfo name={result(movie, 'director', '')} />
             </div>
           </Col>
           <Col xs={12} sm={12} md={6} lg={6}>
@@ -57,7 +67,7 @@ const MovieInfo = ({ movie }) => {
       <Row>
         <Col xs={12} className="details">
           <h3>Synopsis</h3>
-          <p>{movie.plot}</p>
+          <p>{result(movie, 'plot', '')}</p>
         </Col>
       </Row>
     </div>

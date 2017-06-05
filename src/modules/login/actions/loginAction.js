@@ -1,4 +1,5 @@
 import { types } from '../constants/loginActionType';
+import { push } from 'react-router-redux';
 import Client from '../../../client';
 
 export const toggleLogin = (isLoggedIn, errorMessage, token) => ({
@@ -21,6 +22,7 @@ export const login = ({email, password}) => {
       });
       
       dispatch(toggleLogin(true, '', result));
+      dispatch(push('/movies'));
     } catch(err) {
       dispatch(toggleLogin(false, err.message, ''));
     }
