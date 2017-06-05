@@ -404,6 +404,8 @@ body {
       border-radius: 0 !important; }
   .main-layout .movies-info {
     color: #fff; }
+    .main-layout .movies-info .btn {
+      border-radius: 0 !important; }
     .main-layout .movies-info .label {
       font-size: 15px;
       margin-right: 5px; }

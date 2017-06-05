@@ -62,6 +62,10 @@ body {
   .movies-info {
     color: #fff;
     
+    .btn {
+      border-radius: 0 !important;
+    }
+
     .label {
       font-size: 15px;
       margin-right: 5px;

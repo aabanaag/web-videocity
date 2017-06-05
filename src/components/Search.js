@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { Link } from 'redux';
 import { func } from 'prop-types';
 import {
   Form,
@@ -40,6 +41,12 @@ class Search extends PureComponent {
                 onClick={this.handleClick}>
                 SEARCH
               </Button>
+            </InputGroup.Button>
+            <InputGroup.Button>
+              <Link to='/transactions'
+                className="btn btn-info btn-lg">
+                <i className="fa fa-film">Transactions</i>
+              </Link>
             </InputGroup.Button>
           </InputGroup>
         </FormGroup>
