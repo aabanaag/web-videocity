@@ -59,6 +59,7 @@ export const findTransaction = (id) => {
         query = { query: { _id: id } };
       }
 
+      await Client.authenticate();
       const result = await Client.service('transactions').find(query);
 
       dispatch(setTransactions(result.data, result.subDocument.data));
