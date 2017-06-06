@@ -76,4 +76,16 @@ export const returnMovie = (sourceId, movieId) => {
       console.log(err);
     }
   }
-}
+};
+
+export const logout = () => {
+  return async dispatch => {
+    try {
+      await Client.logout();
+
+      dispatch(push('/'));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
