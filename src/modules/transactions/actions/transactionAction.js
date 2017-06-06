@@ -78,7 +78,7 @@ export const returnMovie = (sourceId, movieId) => {
         type: 'return'
       });
 
-      dispatch(push('/transactions'));
+      dispatch(getTransactions());
     } catch (err) {
       console.log(err);
     }
