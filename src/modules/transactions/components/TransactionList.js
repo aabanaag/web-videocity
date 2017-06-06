@@ -10,8 +10,29 @@ import moment from 'moment';
 const TransactionList = ({ transactions, movies, returnMovie }) => {
   const findMovieTitle = (id) => {
     const movie = movies.find(m => m._id === id);
-    console.log(movie);
+
     return result(movie, 'title', '');
+  }
+
+  const renderReturnButton = (status, type, id, movieId) => {
+    if (type !== 'return' && status !== 'returned') {
+      return (
+        <Button
+          bsStyle="info"
+          onClick={() => { returnMovie(id, movieId) }}>
+          Return Movie
+        </Button>
+      );
+    } else {
+      return (
+        <Button
+          bsStyle="info"
+          disabled
+          onClick={() => { returnMovie(id, movieId) }}>
+          Return Movie
+        </Button>
+      );
+    }
   }
 
   const renderTransactions = () => {
@@ -23,15 +44,11 @@ const TransactionList = ({ transactions, movies, returnMovie }) => {
         <td>{ moment(tx.dueDate).format(format) }</td>
         <td>{ moment(tx.createdAt).format(format) }</td>
         <td>
-          <Label bsStyle="danger" className="text-uppercase">{tx.status}</Label>
+          <Label bsStyle="danger" className="text-uppercase">
+            {result(tx, 'status', 'N/A')}
+          </Label>
         </td>
-        <td>
-          <Button
-            bsStyle="info"
-            onClick={() => { returnMovie(tx._id, tx.movieId) }}>
-            Return Movie
-          </Button>
-        </td>
+        <td>{renderReturnButton(tx.status,tx.type, tx._id, tx.movieId)}</td>
       </tr>
     ))
   }
@@ -44,6 +61,7 @@ const TransactionList = ({ transactions, movies, returnMovie }) => {
             <th>Title</th>
             <th>Due Date</th>
             <th>Date</th>
+            <th>Type</th>
             <th>Status</th>
             <th>Actions</th>
           </tr>
