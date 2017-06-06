@@ -25,7 +25,7 @@ body {
   }
 
   .search {
-    input, button {
+    input, button, .btn {
       border-radius: 0 !important;
     }
   }
@@ -103,6 +103,20 @@ body {
 
     .alert, button {
       border-radius: 0 !important;
+    }
+  }
+
+  .transactions-page {
+    .transaction-list-component {
+      table {
+        background-color: #fff !important;
+        td {
+          vertical-align: middle;
+          .btn {
+            border-radius: 0 !important;
+          }
+        }
+      }
     }
   }
 }

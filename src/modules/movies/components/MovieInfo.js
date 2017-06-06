@@ -5,10 +5,9 @@ import {
   Image,
   Label,
   PageHeader,
-  Panel,
   Button
 } from 'react-bootstrap';
-import { isEmpty, result } from 'lodash';
+import { result } from 'lodash';
 import UserInfo from '../../../components/UserInfo';
 
 const MovieInfo = ({ movie, rentMovie }) => {

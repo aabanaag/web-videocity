@@ -2,7 +2,6 @@ import { types } from '../constants/moviesActionType';
 import { push } from 'react-router-redux';
 import Client from '../../../client';
 import { isEmpty } from 'lodash';
-import moment from 'moment';
 
 export const setMovies = (movies) => ({
   type: types.SET_MOVIES,
@@ -54,17 +53,16 @@ export const findMovie = (title) => {
   };
 };
 
-export const rentMovie = (id) => {
+export const rentMovie = (movieId) => {
   return async dispatch => {
     try {
       await Client.authenticate();
-      const result = await Client.service('transactions').create({
-        movieId: id,
-        userId: '',
-        dueDate: moment().add(7, 'd'),
-        amount: 20
+      await Client.service('transactions').create({
+        movieId,
+        amount: 20,
+        type: 'rent'
       });
-      console.log(result);
+
       dispatch(push('/movies'));
     } catch (err) {
       console.log(err);

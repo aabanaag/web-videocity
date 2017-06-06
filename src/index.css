@@ -382,7 +382,7 @@ body {
     border-radius: 0 !important; }
     .main-layout nav .navbar-brand {
       font-size: 20px; }
-  .main-layout .search input, .main-layout .search button {
+  .main-layout .search input, .main-layout .search button, .main-layout .search .btn {
     border-radius: 0 !important; }
   .main-layout .tile-component {
     margin-bottom: 10px; }
@@ -429,3 +429,9 @@ body {
         box-shadow: 0 0 10px #fff; }
     .main-layout .login-page .alert, .main-layout .login-page button {
       border-radius: 0 !important; }
+  .main-layout .transactions-page .transaction-list-component table {
+    background-color: #fff !important; }
+    .main-layout .transactions-page .transaction-list-component table td {
+      vertical-align: middle; }
+      .main-layout .transactions-page .transaction-list-component table td .btn {
+        border-radius: 0 !important; }
