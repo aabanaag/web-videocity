@@ -48,13 +48,20 @@ export const getTransaction = (id) => {
   };
 };
 
-export const findTransaction = (title) => {
+export const findTransaction = (id) => {
   return async dispatch => {
     try {
-      let query = (isEmpty(title)) ? {} : { query: { title } };
+      let query = {};
+
+      if (isEmpty(id)) {
+        query = { query: { type: 'rent' } };
+      } else {
+        query = { query: { _id: id } };
+      }
+
       const result = await Client.service('transactions').find(query);
 
-      dispatch(setTransactions(result.data));
+      dispatch(setTransactions(result.data, result.subDocument.data));
     } catch (err) {
       console.log(err);
     }

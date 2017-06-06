@@ -45,6 +45,11 @@ const TransactionList = ({ transactions, movies, returnMovie }) => {
         <td>{ moment(tx.createdAt).format(format) }</td>
         <td>
           <Label bsStyle="danger" className="text-uppercase">
+            {tx.type}
+          </Label>
+        </td>
+        <td>
+          <Label bsStyle="danger" className="text-uppercase">
             {result(tx, 'status', 'N/A')}
           </Label>
         </td>
