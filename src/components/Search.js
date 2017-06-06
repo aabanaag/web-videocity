@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import { Link } from 'redux';
-import { func } from 'prop-types';
+import { Link } from 'react-router';
+import { func, bool } from 'prop-types';
 import {
   Form,
   FormGroup,
@@ -19,13 +19,41 @@ class Search extends PureComponent {
   }
 
   static propTypes = {
-    search: func
+    search: func,
+    showTransaction: bool,
+    showMovies: bool
   }
 
   handleClick = (e) => {
     e.preventDefault();
 
     this.props.search(this.state.search);
+  }
+
+  renderTransactionButton() {
+    if (this.props.showTransaction) {
+      return (
+        <InputGroup.Button>
+          <Link to='/transactions'
+            className="btn btn-info btn-lg">
+            <i className="fa fa-film"></i> Transactions
+          </Link>
+        </InputGroup.Button>
+      )
+    } else return null;
+  }
+
+  renderMovieButton() {
+    if (this.props.showMovies) {
+      return (
+        <InputGroup.Button>
+          <Link to='/movies'
+            className="btn btn-info btn-lg">
+            <i className="fa fa-film"></i> Movies
+          </Link>
+        </InputGroup.Button>
+      )
+    } else return null;
   }
 
   render() {
@@ -39,15 +67,11 @@ class Search extends PureComponent {
                 bsStyle="success"
                 bsSize="lg"
                 onClick={this.handleClick}>
-                SEARCH
+                <i className="fa fa-search"></i>
               </Button>
             </InputGroup.Button>
-            <InputGroup.Button>
-              <Link to='/transactions'
-                className="btn btn-info btn-lg">
-                <i className="fa fa-film">Transactions</i>
-              </Link>
-            </InputGroup.Button>
+            { this.renderTransactionButton() }
+            { this.renderMovieButton() }
           </InputGroup>
         </FormGroup>
       </Form>
