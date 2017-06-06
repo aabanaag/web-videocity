@@ -20,6 +20,7 @@ class Search extends PureComponent {
 
   static propTypes = {
     search: func,
+    logout: func,
     showTransaction: bool,
     showMovies: bool
   }
@@ -30,12 +31,18 @@ class Search extends PureComponent {
     this.props.search(this.state.search);
   }
 
+  handleLogout = (e) => {
+    e.preventDefault();
+
+    this.props.logout();
+  }
+
   renderTransactionButton() {
     if (this.props.showTransaction) {
       return (
         <InputGroup.Button>
           <Link to='/transactions'
-            className="btn btn-info btn-lg">
+            className="btn btn-warning btn-lg">
             <i className="fa fa-film"></i> Transactions
           </Link>
         </InputGroup.Button>
@@ -48,7 +55,7 @@ class Search extends PureComponent {
       return (
         <InputGroup.Button>
           <Link to='/movies'
-            className="btn btn-info btn-lg">
+            className="btn btn-warning btn-lg">
             <i className="fa fa-film"></i> Movies
           </Link>
         </InputGroup.Button>
@@ -72,6 +79,14 @@ class Search extends PureComponent {
             </InputGroup.Button>
             { this.renderTransactionButton() }
             { this.renderMovieButton() }
+            <InputGroup.Button>
+              <Button
+                bsStyle="info"
+                bsSize="lg"
+                onClick={this.handleLogout}>
+                <i className="fa fa-sign-out"></i>
+              </Button>
+            </InputGroup.Button>
           </InputGroup>
         </FormGroup>
       </Form>
