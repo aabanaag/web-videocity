@@ -8,7 +8,6 @@ import {
 } from 'react-bootstrap';
 import Search from '../../../components/Search';
 import MoviesList from '../components/MoviesList';
-import Alert from 'sweetalert-react';
 
 import {
   getMovies,
@@ -43,11 +42,6 @@ class MoviesPage extends Component {
             showTransaction={true} />
           <MoviesList movies={this.props.movies} />
         </Col>
-        <Alert
-          show={this.props.showAlert}
-          title={this.props.alertTitle}
-          text={this.props.alertMsg}
-          onConfirm={() => { this.props.toggleAlert('','', false) }} />
       </Row>
     )
   }
