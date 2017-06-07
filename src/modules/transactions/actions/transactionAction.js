@@ -23,7 +23,8 @@ export const getTransactions = () => {
     try {
       await Client.authenticate();
       const query = {
-        query: { type: 'rent' }
+        query: { type: 'rent' },
+        $limit: 40
       };
 
       const result = await Client.service('transactions').find(query);

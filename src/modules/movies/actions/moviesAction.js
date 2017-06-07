@@ -17,7 +17,11 @@ export const getMovies = () => {
   return async dispatch => {
     try {
       await Client.authenticate();
-      const query = { query: { status: 'available'} };
+      const query = { 
+        query: { status: 'available'},
+        $limit: 40
+      };
+      
       const result = await Client.service('movies').find(query);
 
       dispatch(setMovies(result.data));

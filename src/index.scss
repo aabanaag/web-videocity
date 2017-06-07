@@ -29,7 +29,15 @@ body {
       border-radius: 0 !important;
     }
   }
-
+  .movies-list-component {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    > .tile-component {
+      padding: 0 15px;
+    }
+  }
   .tile-component {
     margin-bottom: 10px;
     
@@ -56,6 +64,7 @@ body {
     img {
       width: 100%;
       border-radius: 0 !important;
+      height: 232px;
     }
   }
 
